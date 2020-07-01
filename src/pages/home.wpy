@@ -1,0 +1,22 @@
+<template>
+  <div>
+    <van-button type="default">默认按钮</van-button>
+    <van-button type="primary">主要按钮</van-button>
+    <van-button type="warning">警告按钮</van-button>
+    <van-button type="danger">危险按钮</van-button>
+  </div>
+</template>
+<script>
+import wepy from '@wepy/core'
+
+wepy.page({
+  // 选项
+})
+</script>
+<config>
+  {
+    usingComponents: {
+      "van-button": "~vant/button/index"
+    }
+  }
+</config>
