@@ -1,22 +1,68 @@
 <template>
-  <div>
-    <van-button type="default">默认按钮</van-button>
-    <van-button type="primary">主要按钮</van-button>
-    <van-button type="warning">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
-  </div>
+  <scroll-view class="home-container" scroll-y>
+      <div class="search-bar">
+        <div class="city-wrap">
+          <van-icon name="location" size="14px" style="height: 14px; margin-right: 2px;"/>
+          <text>{{city}}</text>
+        </div>
+        <van-search class="search-root" readonly placeholder="活动购票/导游/酒店/景区"></van-search>
+      </div>
+      <div class="van-multi-ellipsis--l2">默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮默认按钮</div>
+
+      <van-button type="default">默认按钮</van-button>
+      <van-button type="primary">主要按钮</van-button>
+      <van-button type="warning">警告按钮</van-button>
+      <van-button type="danger">危险按钮</van-button>
+  </scroll-view>
 </template>
 <script>
 import wepy from '@wepy/core'
 
 wepy.page({
-  // 选项
+  data: {
+    city: '重庆'
+  }
 })
 </script>
+
+<style lang="less" scoped>
+.home-container {
+  height: 100%;
+  font-size: 12px;
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .city-wrap {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .search-root {
+      flex-grow: 1;
+      .van-search {
+        padding: 0 20px 0 5px;
+        height: 30px;
+      }
+      .van-search__content {
+        border-radius: 20px;
+      }
+    }
+
+  }
+}
+</style>
+
 <config>
   {
     usingComponents: {
-      "van-button": "~vant/button/index"
-    }
+      "van-button": "~vant/button/index",
+      "van-icon": "~vant/icon/index",
+      "van-search": "~vant/search/index"
+    },
+    navigationBarTitleText: "旅仆",
   }
 </config>
