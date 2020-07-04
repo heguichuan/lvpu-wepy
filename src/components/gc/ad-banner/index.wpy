@@ -1,0 +1,27 @@
+<template>
+  <div class="ad-banner">
+      <van-icon name="point-gift-o" />
+      <text>欢庆旅仆3周年，限量红包免费领取！</text>
+      <navigator url="/pages/activity-detail"><van-button plain hairline type="danger">马上领取</van-button></navigator>
+  </div>
+</template>
+
+<style lang="less" scoped>
+.ad-banner {
+  display: flex;
+  align-items: center;
+  height: 110rpx;
+  padding: 0 15rpx;
+}
+</style>
+
+<config>
+  {
+    usingComponents: {
+      "van-button": "~vant/button/index",
+      "van-icon": "~vant/icon/index",
+      "van-divider": "~vant/divider/index",
+      "van-image": "~vant/image/index"
+    }
+  }
+</config>

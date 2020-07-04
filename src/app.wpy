@@ -59,7 +59,8 @@
 {
     pages: [
       'pages/home',
-      'pages/index'
+      'pages/index',
+      'pages/activity-detail'
     ],
     window: {
       backgroundTextStyle: 'light',

@@ -1,5 +1,6 @@
 const path = require('path');
-var prod = process.env.NODE_ENV === 'production';
+const pxt2units = require('postcss-px2units');
+const prod = process.env.NODE_ENV === 'production';
 
 module.exports = {
   wpyExt: '.wpy',
@@ -12,7 +13,8 @@ module.exports = {
     alias: {
       counter: path.join(__dirname, 'src/components/counter'),
       '@': path.join(__dirname, 'src'),
-      'vant': path.join(__dirname, 'src/components/vant')
+      'vant': path.join(__dirname, 'src/components/vant'),
+      "gc": path.join(__dirname, 'src/components/gc'),
     },
     aliasFields: ['wepy', 'weapp'],
     modules: ['node_modules']
@@ -29,7 +31,21 @@ module.exports = {
       plugins: [
         '@wepy/babel-plugin-import-regenerator'
       ]
-    }
+    },
+    // postcss: {
+    //   plugins: [
+    //     pxt2units({
+    //       divisor: 1,
+    //       multiple: 2,
+    //       decimalPlaces: 3,
+    //       comment: 'no',
+    //       targetUnits: 'rpx'
+    //     }),
+    //   ],
+    //   map: {
+    //     inline: true
+    //   },
+    // },
   },
   plugins: [],
   appConfig: {
