@@ -1,27 +1,66 @@
 <template>
   <div class="ad-banner">
-      <van-icon name="point-gift-o" />
-      <text>欢庆旅仆3周年，限量红包免费领取！</text>
-      <navigator url="/pages/activity-detail"><van-button plain hairline type="danger">马上领取</van-button></navigator>
+      <van-icon class="image-icon" size="1em" name="/static/img/logo.jpg" />
+      <van-notice-bar
+        class="notice-bar"
+        color="inherit"
+        backgroundColor="inherit"
+        text="欢庆旅仆3周年，限量红包免费领取！"
+      />
+      <navigator v-if="showBtn" style="position: absolute; right: 30rpx;" url="/pages/activity-detail"><van-button custom-class="banner-btn" plain hairline type="danger">马上领取</van-button></navigator>
   </div>
 </template>
+
+<script>
+import wepy from '@wepy/core'
+
+wepy.component({
+  options: {
+    styleIsolation: 'shared',
+  },
+  properties: {
+    showBtn: {
+      type: Boolean,
+      value: true
+    }
+  }
+})
+</script>
 
 <style lang="less" scoped>
 .ad-banner {
   display: flex;
   align-items: center;
   height: 110rpx;
-  padding: 0 15rpx;
+  padding: 0 30rpx;
+
+  .image-icon {
+    font-size: 44rpx;
+    margin-right: 5rpx;
+  }
+  .notice-bar {
+    width: calc(~"100% - 200rpx");
+    .van-notice-bar {
+      padding: 0;
+    }
+  }
+  .banner-btn {
+    height: 56rpx;
+    font-size: 12px;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+
+    &::after {
+      border-radius: 60rpx;
+    }
+  }
 }
 </style>
 
 <config>
   {
     usingComponents: {
-      "van-button": "~vant/button/index",
-      "van-icon": "~vant/icon/index",
-      "van-divider": "~vant/divider/index",
-      "van-image": "~vant/image/index"
+      "van-notice-bar": "~vant/notice-bar/index"
     }
   }
 </config>

@@ -1,5 +1,6 @@
 <template>
-  <scroll-view class="home-container" scroll-y>
+  <div class="tab-page">
+    <scroll-view class="home-scroll" scroll-y>
       <div class="search-bar">
         <div class="city-wrap">
           <van-icon name="location" size="14px" style="height: 14px; margin-right: 2px;"/>
@@ -28,13 +29,51 @@
       </van-grid>
 
       <van-divider custom-style="margin: 0;" hairline/>
-
       <gc-ad-banner></gc-ad-banner>
+      <van-divider custom-style="margin: 0;" hairline/>
+
+
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>ddddddddddddddddddddddd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>dfdfd</view>
+    <view>end</view>
 
   </scroll-view>
+  </div>
 </template>
 <script>
-import wepy from '@wepy/core'
+import wepy from '@wepy/core';
 
 wepy.page({
   data: {
@@ -69,14 +108,16 @@ wepy.page({
         icon: 'photo-o',
       },
     ]
-  }
+  },
+  onShow() {
+		this.$wx.getTabBar().$wepy.init();
+	},
 })
 </script>
 
 <style lang="less" scoped>
-.home-container {
+.home-scroll {
   height: 100%;
-  font-size: 12px;
 
   .search-bar {
     display: flex;
@@ -112,13 +153,10 @@ wepy.page({
 <config>
   {
     usingComponents: {
-      "van-button": "~vant/button/index",
-      "van-icon": "~vant/icon/index",
       "van-search": "~vant/search/index",
       "van-grid": "~vant/grid/index",
       "van-grid-item": "~vant/grid-item/index",
-      "van-divider": "~vant/divider/index",
-      "gc-ad-banner": "~gc/ad-banner/index"
+      "gc-ad-banner": "~gc/ad-banner/index",
     },
     navigationBarTitleText: "旅仆",
   }

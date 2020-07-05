@@ -1,0 +1,25 @@
+<template>
+  <div>list</div>
+</template>
+<script>
+import wepy from '@wepy/core';
+
+wepy.page({
+  data: {
+  },
+  onShow() {
+		this.$wx.getTabBar().$wepy.init();
+	},
+})
+</script>
+
+<style lang="less" scoped>
+</style>
+
+<config>
+  {
+    usingComponents: {
+    },
+    navigationBarTitleText: "旅仆",
+  }
+</config>

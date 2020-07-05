@@ -1,7 +1,7 @@
 <style lang="less">
   @import '~vant/common/index.wxss';
   page {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei',sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
     height: 100%;
     box-sizing: border-box;
     font-size: 12px;
@@ -10,8 +10,8 @@
   input {
     font-size: 12px;
   }
-  .container {
-
+  .tab-page {
+    padding-bottom: 50px;
   }
 </style>
 
@@ -60,6 +60,7 @@
     pages: [
       'pages/home',
       'pages/index',
+      'pages/activity-list',
       'pages/activity-detail'
     ],
     window: {
@@ -67,6 +68,33 @@
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
-    }
+    },
+    usingComponents: {
+      "van-button": "./components/vant/button/index",
+      "van-icon": "./components/vant/icon/index",
+      "van-divider": "./components/vant/divider/index",
+      "van-image": "./components/vant/image/index",
+    },
+    "tabBar": {
+      "custom": true,
+      "color": "#000000",
+      "selectedColor": "#000000",
+      "backgroundColor": "#000000",
+      "list": [
+        {
+          "pagePath": "pages/home",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/activity-list",
+          "text": "活动购票"
+        },
+        {
+          "pagePath": "pages/index",
+          "text": "我的"
+        }
+      ],
+    },
+
 }
 </config>
