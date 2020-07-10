@@ -1,6 +1,6 @@
-const path = require('path');
-const pxt2units = require('postcss-px2units');
-const prod = process.env.NODE_ENV === 'production';
+const path = require('path')
+// const pxt2units = require('postcss-px2units')
+const prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
   wpyExt: '.wpy',
@@ -14,7 +14,7 @@ module.exports = {
       counter: path.join(__dirname, 'src/components/counter'),
       '@': path.join(__dirname, 'src'),
       'vant': path.join(__dirname, 'src/components/vant'),
-      "gc": path.join(__dirname, 'src/components/gc'),
+      'gc': path.join(__dirname, 'src/components/gc')
     },
     aliasFields: ['wepy', 'weapp'],
     modules: ['node_modules']
@@ -31,7 +31,7 @@ module.exports = {
       plugins: [
         '@wepy/babel-plugin-import-regenerator'
       ]
-    },
+    }
     // postcss: {
     //   plugins: [
     //     pxt2units({
@@ -52,4 +52,3 @@ module.exports = {
     noPromiseAPI: ['createSelectorQuery']
   }
 }
-

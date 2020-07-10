@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="lvpufont" horiz-adv-x="1024" >
+  <font-face
+    font-family="lvpufont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="yuan" unicode="&#58887;" d="M463.3-62.299999999999955V123.89999999999998H228.8v77.5h234.5v80.5H228.8v83.5H420L191.5 768h113.7L469 475.4c18.2-33.4 32.4-62.4 42.7-86.9 9 19.8 24.6 50.5 46.8 92.1L713.9 768h120.8L605.5 365.4h192.9v-83.5H564.9v-80.5h233.5v-77.5H564.9v-186.2H463.3z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

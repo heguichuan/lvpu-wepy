@@ -1,0 +1,90 @@
+<template>
+  <div class="image-card">
+    <van-image
+      custom-class="card-image"
+      radius="12rpx"
+      width="100%"
+      height="100"
+      fit="fill"
+      lazy-load
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    ></van-image>
+    <div class="card-content-wrap">
+      <div class="location-bar">
+        <van-icon name="location"></van-icon>
+        <text>大竹林街道</text>
+      </div>
+      <div class="van-multi-ellipsis--l2 card-title">大幅度反弹发大幅度反弹发大幅度反弹发大幅度反弹发大幅度反弹发大幅度反弹发大幅度反弹发大幅度反弹发大幅度反弹发大幅度反弹发</div>
+      <div class="price-bar">
+        <div>
+          <van-icon class-prefix="lvpufont" name="yuan"></van-icon>
+          <text class="price-now">523</text>
+        </div>
+        <text class="price-old">门市价：￥689</text>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+wepy.component({
+  options: {
+    styleIsolation: 'shared'
+  },
+  properties: {
+  }
+})
+</script>
+<style lang="less">
+@import "~@/assets/css/var.less";
+
+.image-card {
+  border: 1px solid @border-bolor;
+  padding-bottom: 10rpx;
+  border-radius: @card-radius;
+  box-shadow: 0 0 6px 0 rgba(238, 238, 238, 0.6);
+
+  .card-image {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  .card-content-wrap {
+    padding: 0 10rpx;
+  }
+  .location-bar {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: @text-color-last;
+  }
+  .card-title {
+    font-size: 14px;
+    color: @text-color-bold;
+    margin: 10rpx 0 20rpx;
+  }
+  .price-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .lvpufont-yuan {
+      color: @price-color;
+    }
+    .price-now {
+      color: @price-color;
+      font-size: 16px;
+    }
+    .price-old {
+      color: @text-color-last;
+      text-decoration: line-through @text-color-last;
+    }
+  }
+}
+</style>
+
+<config>
+  {
+    usingComponents: {
+    }
+  }
+</config>

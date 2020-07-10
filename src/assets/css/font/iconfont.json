@@ -1,0 +1,16 @@
+{
+  "id": "1937024",
+  "name": "lvpu",
+  "font_family": "lvpufont",
+  "css_prefix_text": "pu-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5700815",
+      "name": "money",
+      "font_class": "yuan",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<template>
+  <div class="category-floor">
+    <gc-title-more title="爆款活动" description="超值活动 你想要的全都有"></gc-title-more>
+    <div class="image-card-wrap">
+      <gc-image-card class="image-card-item"></gc-image-card>
+      <gc-image-card-rate class="image-card-item"></gc-image-card-rate>
+      <gc-image-card class="image-card-item"></gc-image-card>
+      <gc-image-card-rate class="image-card-item"></gc-image-card-rate>
+    </div>
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+
+wepy.component({
+  options: {
+    styleIsolation: 'shared'
+  },
+  properties: {
+    // showBtn: {
+    //   type: Boolean,
+    //   value: true
+    // }
+  },
+  data: {
+  }
+})
+</script>
+
+<style lang="less" scoped>
+.category-floor {
+  padding: 30rpx;
+
+  .image-card-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30rpx;
+  }
+  .image-card-item {
+    width: calc(~"(100% - 30rpx)/2");
+    margin-bottom: 30rpx;
+  }
+}
+</style>
+
+<config>
+  {
+    usingComponents: {
+      "van-notice-bar": "~vant/notice-bar/index",
+      "gc-title-more": "~gc/title-more/index",
+      "gc-image-card": "~gc/image-card/index",
+      "gc-image-card-rate": "~gc/image-card-rate/index"
+    }
+  }
+</config>

@@ -31,87 +31,53 @@
       <van-divider custom-style="margin: 0;" hairline/>
       <gc-ad-banner></gc-ad-banner>
       <van-divider custom-style="margin: 0;" hairline/>
+      <gc-category-floor></gc-category-floor>
 
-
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>ddddddddddddddddddddddd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>dfdfd</view>
-    <view>end</view>
-
+      <van-divider custom-style="margin: 0;"/>
+      <gc-category-floor></gc-category-floor>
   </scroll-view>
   </div>
 </template>
 <script>
-import wepy from '@wepy/core';
+import wepy from '@wepy/core'
 
 wepy.page({
   data: {
     city: '重庆',
     banners: [
       {
-        link: 'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
+        link: 'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
       },
       {
-        link: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1593871399&di=2f1f37c07827fe0157ae26a9a58701f2&src=http://a3.att.hudong.com/14/75/01300000164186121366756803686.jpg',
+        link: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1593871399&di=2f1f37c07827fe0157ae26a9a58701f2&src=http://a3.att.hudong.com/14/75/01300000164186121366756803686.jpg'
       }
     ],
     menus: [
       {
         title: '导游预订',
         link: '/pages/activity-detail',
-        icon: 'photo-o',
+        icon: 'photo-o'
       },
       {
         title: '景点预订',
         link: '/pages/activity-detail',
-        icon: 'photo-o',
+        icon: 'photo-o'
       },
       {
         title: '酒店预订',
         link: '/pages/activity-detail',
-        icon: 'photo-o',
+        icon: 'photo-o'
       },
       {
         title: '租车预订',
         link: '/pages/activity-detail',
-        icon: 'photo-o',
-      },
+        icon: 'photo-o'
+      }
     ]
   },
   onShow() {
-		this.$wx.getTabBar().$wepy.init();
-	},
+    this.$wx.getTabBar().$wepy.init()
+  }
 })
 </script>
 
@@ -157,6 +123,7 @@ wepy.page({
       "van-grid": "~vant/grid/index",
       "van-grid-item": "~vant/grid-item/index",
       "gc-ad-banner": "~gc/ad-banner/index",
+      "gc-category-floor": "~gc/category-floor/index"
     },
     navigationBarTitleText: "旅仆",
   }

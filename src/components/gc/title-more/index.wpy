@@ -1,0 +1,52 @@
+<template>
+  <div class="title-more">
+    <div class="title-head">
+      <text class="title-head-title">{{title}}</text>
+      <div class="title-head-more">
+        <text>{{moreText}}</text>
+        <van-icon name="arrow" />
+      </div>
+    </div>
+    <div v-if="description">{{description}}</div>
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core';
+wepy.component({
+  properties: {
+    title: {
+      type: String,
+      value: '标题'
+    },
+    description: {
+      type: String,
+      value: ''
+    },
+    moreText: {
+      type: String,
+      value: '更多'
+    }
+  }
+})
+</script>
+<style lang="less" scoped>
+.title-more {
+  color: #ccc;
+  .title-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rpx;
+    .title-head-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .title-head-more {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+</style>
