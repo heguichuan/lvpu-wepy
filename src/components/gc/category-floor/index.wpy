@@ -1,12 +1,26 @@
 <template>
   <div class="category-floor">
     <gc-title-more title="爆款活动" description="超值活动 你想要的全都有"></gc-title-more>
-    <div class="image-card-wrap">
-      <gc-image-card class="image-card-item"></gc-image-card>
-      <gc-image-card-rate class="image-card-item"></gc-image-card-rate>
-      <gc-image-card class="image-card-item"></gc-image-card>
-      <gc-image-card-rate class="image-card-item"></gc-image-card-rate>
-    </div>
+    <swiper
+        class="floor-swiper"
+        :indicator-dots="true"
+        :autoplay="false"
+        :interval="3000"
+        :duration="500"
+        indicator-active-color="#2D9911"
+        @tap="toActivityDetail"
+      >
+        <block v-for="index in 4" :key="index">
+          <swiper-item>
+            <div class="image-card-wrap">
+              <gc-image-card class="image-card-item" data-id="123"></gc-image-card>
+              <gc-image-card-rate class="image-card-item"></gc-image-card-rate>
+              <gc-image-card class="image-card-item"></gc-image-card>
+              <gc-image-card-rate class="image-card-item"></gc-image-card-rate>
+            </div>
+          </swiper-item>
+        </block>
+    </swiper>
   </div>
 </template>
 
@@ -24,6 +38,19 @@ wepy.component({
     // }
   },
   data: {
+  },
+  methods: {
+    toActivityDetail(e) {
+      let id = e.target.dataset.id
+
+      if (id) {
+        wx.navigateTo({
+          url: `/pages/activity/detail?id=${id}`
+        })
+      } else {
+        wepy.$Tip.fail('解析失败')
+      }
+    }
   }
 })
 </script>
@@ -32,6 +59,9 @@ wepy.component({
 .category-floor {
   padding: 30rpx;
 
+  .floor-swiper {
+    height: 920rpx;
+  }
   .image-card-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -40,6 +70,8 @@ wepy.component({
   }
   .image-card-item {
     width: calc(~"(100% - 30rpx)/2");
+    height: 400rpx;
+    overflow: hidden;
     margin-bottom: 30rpx;
   }
 }

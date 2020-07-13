@@ -57,6 +57,7 @@ module.exports.getTime = getTime;
 </wxs>
 <template>
   <div class="container">
+    <van-toast id="van-toast" />
     <div class="userinfo" @tap="handleViewTap">
       <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
       <div class="userinfo-nickname">{{ userInfo.nickName }}</div>
@@ -141,10 +142,10 @@ module.exports.getTime = getTime;
 
 <script>
   import wepy from '@wepy/core'
-  import eventHub from '../common/eventHub';
-  import { mapState } from '@wepy/x';
-  import store from '../store';
-  import testMixin from '../mixins/test'
+  import eventHub from '../common/eventHub'
+import { mapState } from '@wepy/x'
+import store from '../store'
+import testMixin from '../mixins/test'
 
   wepy.page({
     store,
@@ -156,15 +157,13 @@ module.exports.getTime = getTime;
       // Page 级别 hook, 只对当前 Page 的 setData 生效。
       'before-setData': function (dirty) {
         if (Math.random() < 0.2) {
-          console.log('setData canceled');
-          return false; // Cancel setData
+          console.log('setData canceled')
+          return false // Cancel setData
         }
-        dirty.time = +new Date();
-        return dirty;
+        dirty.time = +new Date()
+        return dirty
       }
     },
-
-
 
     mixins: [testMixin],
 
@@ -227,16 +226,16 @@ module.exports.getTime = getTime;
     computed: {
       ...mapState([ 'counter' ]),
       testcomputed () {
-        return 'computed - ' + this.mynum;
+        return 'computed - ' + this.mynum
       }
     },
 
     methods: {
       handleViewTap () {
-        console.log('handleVieTap clicked');
+        console.log('handleVieTap clicked')
       },
       tap () {
-        throw 'can not go here';
+        throw 'can not go here'
       },
       plus () {
         this.mynum++
@@ -249,19 +248,19 @@ module.exports.getTime = getTime;
 
         promise.then((d) => {
           console.log('toast done')
-        });
+        })
       },
       mixintap () {
-        console.log('do noting from ' + this.$is);
+        console.log('do noting from ' + this.$is)
       },
       communicate () {
-        let counters = this.$children.filter((com) => com.$is === 'components/counter');
+        let counters = this.$children.filter((com) => com.$is === 'components/counter')
 
-        // Get children counter
-        counters[0].num++;
-        counters[1].num--;
+      // Get children counter
+        counters[0].num++
+        counters[1].num--
 
-        eventHub.$emit('app-launch', {a: 1}, {b: 2});
+        eventHub.$emit('app-launch', {a: 1}, {b: 2})
       },
       request () {
         let self = this
@@ -272,38 +271,38 @@ module.exports.getTime = getTime;
             url: 'https://www.madcoder.cn/tests/sleep.php?time=1&t=css&c=' + map[i] + '&i=' + i,
             success: function (d) {
               if (d.statusCode !== 200) {
-                self.netrst += d.statusCode + '.';
+                self.netrst += d.statusCode + '.'
               } else {
-                self.netrst += d.data + '.';
+                self.netrst += d.data + '.'
               }
             }
           })
         }
       },
       counterEmit (num) {
-        console.log(`${this.$is} receive event, the number is: ${num}`);
+        console.log(`${this.$is} receive event, the number is: ${num}`)
       }
     },
 
     created () {
       let self = this
-      self.currentTime = +new Date();
+      self.currentTime = +new Date()
 
-      self.setTimeoutTitle = '标题三秒后会被修改';
+      self.setTimeoutTitle = '标题三秒后会被修改'
       setTimeout(() => {
-        self.setTimeoutTitle = '到三秒了';
-      }, 3000);
+        self.setTimeoutTitle = '到三秒了'
+      }, 3000)
 
       wx.getUserInfo({
         success (res) {
-          self.userInfo = res.userInfo;
+          self.userInfo = res.userInfo
         }
-      });
+      })
     },
     onShow() {
-      this.$wx.getTabBar().$wepy.init();
-    },
-  });
+      this.$wx.getTabBar().$wepy.init()
+    }
+  })
 </script>
 <config>
 {

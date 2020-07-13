@@ -12,33 +12,33 @@ wepy.component({
     active: 0,
     tabs: [
       {
-				icon: 'home-o',
-				text: '首页',
-				url: 'home'
-			},
-			{
-				icon: 'search',
-				text: '活动购票',
-				url: 'activity-list'
-			},
-			{
-				icon: 'friends-o',
-				text: '我的',
-				url: 'index'
-			}
+        icon: 'home-o',
+        text: '首页',
+        url: 'home/index'
+      },
+      {
+        icon: 'search',
+        text: '活动购票',
+        url: 'activity-list'
+      },
+      {
+        icon: 'friends-o',
+        text: '我的',
+        url: 'index'
+      }
     ]
   },
   methods: {
     onChange(event) {
       // event.detail 的值为当前选中项的索引
-      this.active = event.$wx.detail;
+      this.active = event.$wx.detail
       wx.switchTab({
-				url: this.tabs[event.$wx.detail].url
-			});
+        url: this.tabs[event.$wx.detail].url
+      })
     },
     init() {
-      const page = getCurrentPages().pop();
-      this.active = this.tabs.findIndex(item => `pages/${item.url}` === page.route);
+      const page = getCurrentPages().pop()
+      this.active = this.tabs.findIndex(item => `pages/${item.url}` === page.route)
     }
   }
 })

@@ -1,16 +1,17 @@
 <template>
-  <div class="tab-page">
-    <scroll-view class="home-scroll" scroll-y>
+  <div class="tab-page home-page">
+      <van-toast id="van-toast" />
       <div class="search-bar">
         <div class="city-wrap">
           <van-icon name="location" size="14px" style="height: 14px; margin-right: 2px;"/>
           <text>{{city}}</text>
         </div>
-        <van-search class="search-root" readonly placeholder="活动购票/导游/酒店/景区"></van-search>
+        <van-search class="search-root" readonly placeholder="活动购票/导游/酒店/景区" @tap="toSearch"></van-search>
       </div>
       <!-- <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="scaleToFill" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></image> -->
 
       <swiper
+        class="banner-swiper"
         :indicator-dots="true"
         :autoplay="true"
         :interval="3000"
@@ -35,7 +36,6 @@
 
       <van-divider custom-style="margin: 0;"/>
       <gc-category-floor></gc-category-floor>
-  </scroll-view>
   </div>
 </template>
 <script>
@@ -75,16 +75,24 @@ wepy.page({
       }
     ]
   },
+  methods: {
+    toSearch() {
+      wx.navigateTo({
+        url: '/pages/home/search'
+      })
+    }
+  },
   onShow() {
     this.$wx.getTabBar().$wepy.init()
+  },
+  onReachBottom() {
+    console.log(233)
   }
 })
 </script>
 
 <style lang="less" scoped>
-.home-scroll {
-  height: 100%;
-
+.home-page {
   .search-bar {
     display: flex;
     align-items: center;
@@ -106,6 +114,10 @@ wepy.page({
         border-radius: 20px;
       }
     }
+  }
+
+  .banner-swiper {
+    height: 320rpx;
   }
 
   .banner-image {

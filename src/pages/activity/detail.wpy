@@ -1,0 +1,65 @@
+<template>
+  <div class="activity-detail-page">
+    <gc-navbar></gc-navbar>
+    <swiper
+        class="banner-swiper"
+        :indicator-dots="true"
+        :autoplay="true"
+        :interval="3000"
+        :duration="500"
+        indicator-active-color="#2D9911"
+      >
+        <block v-for="(bner, index) in banners" :key="index">
+          <swiper-item>
+            <image class="banner-image" mode="scaleToFill" :src="bner.link"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+
+wepy.page({
+  data: {
+    banners: [
+      {
+        link: 'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
+      },
+      {
+        link: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1593871399&di=2f1f37c07827fe0157ae26a9a58701f2&src=http://a3.att.hudong.com/14/75/01300000164186121366756803686.jpg'
+      }
+    ]
+  }
+})
+
+</script>
+
+<style lang="less" scoped>
+@banner-height: 400rpx;
+
+.activity-detail-page {
+  // margin-top: -100px;
+  .banner-swiper {
+    width: 100%;
+    height: @banner-height;
+    .banner-image {
+      width: 100%;
+      height: @banner-height;
+    }
+  }
+}
+</style>
+
+<config>
+  {
+    navigationBarTitleText: "活动详情",
+    navigationBarTextStyle: "white",
+    navigationStyle: "custom",
+
+    "usingComponents": {
+      "gc-navbar": "~gc/navbar/index"
+    }
+  }
+</config>

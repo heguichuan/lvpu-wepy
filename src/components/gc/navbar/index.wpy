@@ -1,0 +1,73 @@
+<template>
+  <van-nav-bar
+    class="gc-nav-bar"
+    custom-class="van-nav-bar-root"
+    title-class="van-nav-bar-title"
+    title="活动详情"
+    :left-text="leftText ? leftText: ''"
+    left-arrow
+    fixed
+    :border="false"
+    @click-left="onClickLeft"
+  ></van-nav-bar>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+wepy.component({
+  options: {
+    styleIsolation: 'shared'
+  },
+  props: {
+    title: {
+      type: String,
+      default: '活动详情'
+    },
+    leftText: {
+      type: String,
+      default: ''
+    },
+    clickLeftEmit: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    back() {
+      wx.navigateBack()
+    },
+    onClickLeft() {
+      if (this.clickLeftEmit) {
+        this.$emit('click-left')
+      } else {
+        wx.navigateBack()
+      }
+    }
+  }
+})
+</script>
+
+<style lang="less" scoped>
+.gc-nav-bar {
+  .van-nav-bar-root {
+    background-color: transparent;
+    color: #fff;
+  }
+  .van-nav-bar-title {
+    color: #fff;
+    font-size: 14px;
+  }
+  .bar-index--van-nav-bar__arrow, .van-nav-bar__text {
+    color: #fff;
+    font-size: 14px;
+  }
+}
+</style>
+
+<config>
+{
+  "usingComponents": {
+    "van-nav-bar": "~vant/nav-bar/index"
+  }
+}
+</config>

@@ -1,0 +1,83 @@
+<template>
+  <div class="home-search-page">
+      <van-search
+        :value="content"
+        class="search-root"
+        placeholder="活动购票/导游/酒店/景区"
+        use-action-slot
+        @change="onChange"
+        @search="onSearch"
+      >
+        <view slot="action" @click="onSearch">搜索</view>
+      </van-search>
+      <div class="category-title">历史搜索</div>
+      <div class="category-wrap">
+        <text class="category-item" @tap="handleHot('俄罗斯签证')">俄罗斯签证</text>
+      </div>
+      <div class="category-title">热门搜索</div>
+      <div class="category-wrap">
+        <text class="category-item">莫斯科跟团游</text>
+        <text class="category-item">贝加尔湖</text>
+        <text class="category-item">莫斯科攻略</text>
+        <text class="category-item">话费充值</text>
+        <text class="category-item">石桥铺电脑城</text>
+      </div>
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+wepy.page({
+  data: {
+    content: ''
+  },
+  methods: {
+    onChange(e) {
+      this.content = e.$wx.detail
+    },
+    onSearch() {
+      console.log(this.content)
+    },
+    handleHot(text) {
+      console.log(text)
+    }
+  }
+})
+</script>
+
+<style lang="less" scoped>
+@import "~@/assets/css/var.less";
+
+.home-search-page {
+  padding: 0 40rpx;
+  .van-search  {
+    padding-left: 0;
+  }
+  .category-title {
+    font-size: 12px;
+    color: @text-color-third;
+    margin: 30rpx 0;
+  }
+  .category-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .category-item {
+    padding: 24rpx;
+    background-color: #F8F8F8;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin: 0 10rpx;
+    margin-bottom: 30rpx;
+  }
+}
+</style>
+
+<config>
+  {
+    usingComponents: {
+      "van-search": "~vant/search/index",
+    },
+    navigationBarTitleText: "搜索",
+  }
+</config>
