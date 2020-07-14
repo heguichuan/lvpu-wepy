@@ -3,11 +3,9 @@
     <gc-navbar></gc-navbar>
     <swiper
         class="banner-swiper"
-        :indicator-dots="true"
         :autoplay="true"
         :interval="3000"
         :duration="500"
-        indicator-active-color="#2D9911"
       >
         <block v-for="(bner, index) in banners" :key="index">
           <swiper-item>
@@ -15,6 +13,32 @@
           </swiper-item>
         </block>
       </swiper>
+      <div class="summary-box">
+        <div class="summary-box-title">【重庆·石油路】老楼火锅3-4人餐一价全含，还送4杯奶茶</div>
+        <div class="label-item">微信支付</div>
+        <div class="price-bar">
+          <div>
+            <van-icon class-prefix="lvpufont" name="yuan"></van-icon>
+            <text class="price-now">523</text>
+          </div>
+          <text class="price-old">门市价：￥689</text>
+        </div>
+      </div>
+      <van-divider custom-style="margin: 0;"/>
+      <div class="location-box">
+        <van-icon name="location" color="#2D9911"></van-icon>
+        <text>重庆市渝北区大竹林爱彼此小区</text>
+      </div>
+      <van-divider custom-style="margin: 0;"/>
+      <div class="content-box">
+        有人说旋转木马是见证两个相爱的人的爱情游戏,只要两个真心相爱的人同时坐在旋转木马上,木马就会载着他们到一个完美的天堂,他们的爱情就会天长地久。也有人说爱情应该是相互的,是2个手牵手走过一生的勇气。
+      </div>
+
+      <van-goods-action class="">
+        <van-goods-action-icon icon="chat-o" text="客服" @click="onClickIcon" />
+        <van-goods-action-icon icon="x lvpufont lvpufont-fenxiang" text="分享" @click="onClickIcon" />
+        <van-goods-action-button text="立即购买" @click="onClickButton" />
+      </van-goods-action>
   </div>
 </template>
 
@@ -31,12 +55,17 @@ wepy.page({
         link: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1593871399&di=2f1f37c07827fe0157ae26a9a58701f2&src=http://a3.att.hudong.com/14/75/01300000164186121366756803686.jpg'
       }
     ]
+  },
+  methods: {
+    onClickIcon() {},
+    onClickButton() {}
   }
 })
 
 </script>
 
 <style lang="less" scoped>
+@import "~@/assets/css/var.less";
 @banner-height: 400rpx;
 
 .activity-detail-page {
@@ -49,6 +78,55 @@ wepy.page({
       height: @banner-height;
     }
   }
+  .summary-box {
+    position: relative;
+    top: -30rpx;
+    margin-bottom: -20rpx;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    padding: 36rpx 36rpx 0;
+    background-color: #fff;
+    .summary-box-title {
+      color: @text-color-bold;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .label-item {
+      color: @text-color-last;
+      margin: 10rpx 0 30rpx;
+    }
+    .price-bar {
+      display: flex;
+      justify-content: space-between;
+      .lvpufont-yuan {
+        color: @price-color;
+      }
+      .price-now {
+        color: @price-color;
+        font-size: 16px;
+      }
+      .price-old {
+        color: @text-color-last;
+        text-decoration: line-through @text-color-last;
+      }
+    }
+  }
+  .location-box {
+    display: flex;
+    align-items: center;
+    padding: 20rpx 36rpx;
+    color: @text-color-secondary;
+
+    .van-icon-location {
+      margin-right: 10rpx;
+    }
+  }
+  .content-box {
+    padding: 20rpx 36rpx;
+  }
+  .van-goods-action {
+    border-top: 1px solid @border-bolor;
+  }
 }
 </style>
 
@@ -59,7 +137,10 @@ wepy.page({
     navigationStyle: "custom",
 
     "usingComponents": {
-      "gc-navbar": "~gc/navbar/index"
+      "gc-navbar": "~gc/navbar/index",
+      "van-goods-action": "~vant/goods-action/index",
+      "van-goods-action-icon": "~vant/goods-action-icon/index",
+      "van-goods-action-button": "~vant/goods-action-button/index"
     }
   }
 </config>

@@ -31,6 +31,12 @@
           <ul class="icon_lists dib-box">
           
             <li class="dib">
+              <span class="icon lvpufont">&#xe604;</span>
+                <div class="name">share</div>
+                <div class="code-name">&amp;#xe604;</div>
+              </li>
+          
+            <li class="dib">
               <span class="icon lvpufont">&#xe607;</span>
                 <div class="name">money</div>
                 <div class="code-name">&amp;#xe607;</div>
@@ -87,11 +93,20 @@
         <ul class="icon_lists dib-box">
           
           <li class="dib">
-            <span class="icon lvpufont pu-icon-yuan"></span>
+            <span class="icon lvpufont lvpufont-fenxiang"></span>
+            <div class="name">
+              share
+            </div>
+            <div class="code-name">.lvpufont-fenxiang
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon lvpufont lvpufont-yuan"></span>
             <div class="name">
               money
             </div>
-            <div class="code-name">.pu-icon-yuan
+            <div class="code-name">.lvpufont-yuan
             </div>
           </li>
           
@@ -113,7 +128,7 @@
 <pre><code class="language-html">&lt;link rel="stylesheet" href="./iconfont.css"&gt;
 </code></pre>
         <h3 id="-">第二步：挑选相应图标并获取类名，应用于页面：</h3>
-<pre><code class="language-html">&lt;span class="lvpufont pu-icon-xxx"&gt;&lt;/span&gt;
+<pre><code class="language-html">&lt;span class="lvpufont lvpufont-xxx"&gt;&lt;/span&gt;
 </code></pre>
         <blockquote>
           <p>"
@@ -126,10 +141,18 @@
           
             <li class="dib">
                 <svg class="icon svg-icon" aria-hidden="true">
-                  <use xlink:href="#pu-icon-yuan"></use>
+                  <use xlink:href="#lvpufont-fenxiang"></use>
+                </svg>
+                <div class="name">share</div>
+                <div class="code-name">#lvpufont-fenxiang</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#lvpufont-yuan"></use>
                 </svg>
                 <div class="name">money</div>
-                <div class="code-name">#pu-icon-yuan</div>
+                <div class="code-name">#lvpufont-yuan</div>
             </li>
           
           </ul>

@@ -2,9 +2,16 @@
   "id": "1937024",
   "name": "lvpu",
   "font_family": "lvpufont",
-  "css_prefix_text": "pu-icon-",
+  "css_prefix_text": "lvpufont-",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "1380725",
+      "name": "share",
+      "font_class": "fenxiang",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
     {
       "icon_id": "5700815",
       "name": "money",
