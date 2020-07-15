@@ -34,6 +34,38 @@
         有人说旋转木马是见证两个相爱的人的爱情游戏,只要两个真心相爱的人同时坐在旋转木马上,木马就会载着他们到一个完美的天堂,他们的爱情就会天长地久。也有人说爱情应该是相互的,是2个手牵手走过一生的勇气。
       </div>
 
+      <van-popup
+        :show="showPopup"
+        round
+        closeable
+        position="bottom"
+        @close="onPopupClose"
+      >
+        <div class="popup-box">
+          <van-card
+            desc="描述信息"
+            title="商品标题"
+            price="2.00"
+            origin-price="26.99"
+            :centered="true"
+            thumb="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"
+          >
+          </van-card>
+          <div class="sku-title">规格</div>
+          <div class="sku-box">
+            <div class="sku-item sku-item-active">交运明珠号</div>
+            <div class="sku-item">交运明月号</div>
+            <div class="sku-item">金碧女王号</div>
+            <div class="sku-item">金碧辉煌号</div>
+          </div>
+          <div class="stepper-box">
+            <view class="stepper-title">数量</view>
+            <van-stepper :value="buyParams.number" :integer="true" @change="stepperChange"/>
+          </div>
+          <van-button custom-class="popup-buy-button" type="danger" size="large" @click="toPayment">提交订单</van-button>
+        </div>
+      </van-popup>
+
       <van-goods-action class="">
         <van-goods-action-icon icon="chat-o" text="客服" @click="onClickIcon" />
         <van-goods-action-icon icon="x lvpufont lvpufont-fenxiang" text="分享" @click="onClickIcon" />
@@ -54,11 +86,28 @@ wepy.page({
       {
         link: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1593871399&di=2f1f37c07827fe0157ae26a9a58701f2&src=http://a3.att.hudong.com/14/75/01300000164186121366756803686.jpg'
       }
-    ]
+    ],
+    showPopup: false,
+    buyParams: {
+      number: 1
+    }
   },
   methods: {
     onClickIcon() {},
-    onClickButton() {}
+    onClickButton() {
+      this.showPopup = true
+    },
+    onPopupClose() {
+      this.showPopup = false
+    },
+    stepperChange(e) {
+      this.buyParams.number = e.$wx.detail
+    },
+    toPayment() {
+      wx.navigateTo({
+        url: '/pages/activity/payment'
+      })
+    }
   }
 })
 
@@ -127,6 +176,49 @@ wepy.page({
   .van-goods-action {
     border-top: 1px solid @border-bolor;
   }
+  .popup-box {
+    padding-top: 40rpx;
+    .van-card {
+      background-color: #fff;
+    }
+    .sku-title {
+      color: @text-color-bold;
+      font-weight: bold;
+      padding: 0 16px;
+      margin-bottom: 30rpx;
+    }
+    .sku-box {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 16px;
+      .sku-item {
+        padding: 10rpx 20rpx;
+        border-radius: 40rpx;
+        background-color: @item-background;
+        margin-right: 30rpx;
+        margin-bottom: 20rpx;
+        &.sku-item-active {
+          background-color: #e87c8033;
+          border: 1px solid @price-color;
+          color: @price-color;
+        }
+      }
+    }
+    .stepper-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10rpx 16px 60rpx;
+      .stepper-title {
+        color: @text-color-bold;
+        font-weight: bold;
+      }
+    }
+    .popup-buy-button {
+      height: 72rpx;
+      font-size: 14px;
+    }
+  }
 }
 </style>
 
@@ -140,7 +232,10 @@ wepy.page({
       "gc-navbar": "~gc/navbar/index",
       "van-goods-action": "~vant/goods-action/index",
       "van-goods-action-icon": "~vant/goods-action-icon/index",
-      "van-goods-action-button": "~vant/goods-action-button/index"
+      "van-goods-action-button": "~vant/goods-action-button/index",
+      "van-popup": "~vant/popup/index",
+      "van-card": "~vant/card/index",
+      "van-stepper": "~vant/stepper/index"
     }
   }
 </config>

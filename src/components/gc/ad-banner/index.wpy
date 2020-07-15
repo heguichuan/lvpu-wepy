@@ -7,7 +7,7 @@
         backgroundColor="inherit"
         text="欢庆旅仆3周年，限量红包免费领取！"
       />
-      <navigator v-if="showBtn" style="position: absolute; right: 30rpx;" url="/pages/activity-detail"><van-button custom-class="banner-btn" plain hairline type="danger">马上领取</van-button></navigator>
+      <navigator v-if="showBtn" style="position: absolute; right: 30rpx;" url="/pages/activity/detail"><van-button custom-class="banner-btn" plain hairline type="danger">马上领取</van-button></navigator>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import wepy from '@wepy/core'
 
 wepy.component({
   options: {
-    styleIsolation: 'shared',
+    styleIsolation: 'shared'
   },
   properties: {
     showBtn: {

@@ -48,10 +48,11 @@ wepy.app({
 <config>
 {
     pages: [
-      'pages/activity/detail',
+      'pages/activity/payment',
       'pages/home/index',
       'pages/home/search',
       'pages/activity-list',
+      'pages/activity/detail',
       'pages/index',
     ],
     window: {

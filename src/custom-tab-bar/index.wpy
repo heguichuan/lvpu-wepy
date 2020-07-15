@@ -14,17 +14,17 @@ wepy.component({
       {
         icon: 'home-o',
         text: '首页',
-        url: 'home/index'
+        url: '/pages/home/index'
       },
       {
         icon: 'search',
         text: '活动购票',
-        url: 'activity-list'
+        url: '/pages/activity/list'
       },
       {
         icon: 'friends-o',
         text: '我的',
-        url: 'index'
+        url: '/pages/index'
       }
     ]
   },

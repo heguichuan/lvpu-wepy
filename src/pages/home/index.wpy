@@ -55,22 +55,22 @@ wepy.page({
     menus: [
       {
         title: '导游预订',
-        link: '/pages/activity-detail',
+        link: '/pages/activity/detail',
         icon: 'photo-o'
       },
       {
         title: '景点预订',
-        link: '/pages/activity-detail',
+        link: '/pages/activity/detail',
         icon: 'photo-o'
       },
       {
         title: '酒店预订',
-        link: '/pages/activity-detail',
+        link: '/pages/activity/detail',
         icon: 'photo-o'
       },
       {
         title: '租车预订',
-        link: '/pages/activity-detail',
+        link: '/pages/activity/detail',
         icon: 'photo-o'
       }
     ]

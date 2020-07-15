@@ -1,0 +1,32 @@
+<template>
+  <div class="activity-payment-page">
+    <gc-consignee-info></gc-consignee-info>
+    <van-card
+      title-class="van-ellipsis"
+      title="商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题"
+      desc="规格：金碧辉煌号"
+      price="2.00"
+      num="2"
+      :centered="true"
+      thumb="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"
+    >
+    </van-card>
+  </div>
+</template>
+
+<style lang="less" scoped>
+.activity-payment-page {
+  .van-card {
+    background-color: #fff;
+  }
+}
+</style>
+
+<config>
+{
+  "usingComponents": {
+    "van-card": "~vant/card/index",
+    "gc-consignee-info": "~gc/consignee-info/index"
+  }
+}
+</config>

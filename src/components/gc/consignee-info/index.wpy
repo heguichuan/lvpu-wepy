@@ -1,0 +1,27 @@
+<template>
+  <div class="consignee-info">
+    <div class="van-multi-ellipsis--l2 consignee-info-title">重庆市江北区东苑D7二期1栋9-1</div>
+    <div class="consignee-info-name-tel">
+      <view>张三</view>
+      <view>136****0859</view>
+    </div>
+    <div>513223655608206536</div>
+  </div>
+</template>
+
+<style lang="less" scoped>
+@import "~@/assets/css/var.less";
+
+.consignee-info {
+  .consignee-info-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: @text-color-bold;
+  }
+  .consignee-info-name-tel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+</style>
